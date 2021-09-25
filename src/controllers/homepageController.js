@@ -25,9 +25,15 @@ let sendAnimation = async (req, res) => {
     return res.redirect("/");
 };
 
+let getDataCovidByProvince = async (req, res) => {
+    const payload = await telegramService.getDataCovidByProvinceService();
+    return res.send(payload);
+};
+
 module.exports = {
     getHomePage: getHomePage,
     handlePushTeleNotification: handlePushTeleNotification,
     getTelegramPage: getTelegramPage,
-    sendAnimation: sendAnimation
+    sendAnimation: sendAnimation,
+    getDataCovidByProvince: getDataCovidByProvince
 };

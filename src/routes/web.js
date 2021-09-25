@@ -8,6 +8,7 @@ let initAllWebRoutes = (app) => {
     router.post("/send-notification", homepageController.handlePushTeleNotification);
     router.get("/telegram", homepageController.getTelegramPage);
     router.get("/send-animation",homepageController.sendAnimation);
+    router.get("/get-data-covid-by-province-by-day", homepageController.getDataCovidByProvince)
     return app.use("/", router);
 };
 
